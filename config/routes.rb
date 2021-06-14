@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   get 'disguises/index'
   get 'disguises/show'
   get 'disguises/new'
