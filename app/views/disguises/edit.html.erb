@@ -1,2 +1,12 @@
-<h1>Disguises#edit</h1>
-<p>Find me in app/views/disguises/edit.html.erb</p>
+<div class="form-container">
+    <h2>Modify your disguise</h2>
+    <%= simple_form_for(@disguise) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :price_per_day %>
+    <%= f.input :category %>
+    <%= f.input :gender %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Create", class:"btn" %>
+    <% end %>
+</div>
