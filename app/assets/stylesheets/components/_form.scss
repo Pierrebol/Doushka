@@ -1,0 +1,31 @@
+.form-container {
+    padding-top: 5px;
+    justify-content: center;
+    width: 75vh;
+    margin: 0 auto;
+
+    h2 {
+        text-align: center;
+    }
+
+    .btn {
+        color: white;
+        margin-bottom: 8px;
+        padding: 8px 24px;
+        border-radius: 4px;
+        font-weight: bold;
+        background: linear-gradient(#167FFB, #0F60C4);
+        transition: background 0.3s ease;
+        border: 1px solid #0F60C4;
+        background-color: gray;
+        color: white;
+        width: 30%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .btn:hover {
+        background: linear-gradient(#147EFF, #0F67DA);
+        color: white;
+    }
+}

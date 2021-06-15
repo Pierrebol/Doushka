@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'profiles/profile'
   resources :disguises
 
   resources :bookings, only: [:index, :new, :create, :destroy]
