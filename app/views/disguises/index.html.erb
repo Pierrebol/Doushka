@@ -1,2 +1,19 @@
 <h1>Disguises#index</h1>
 <p>Find me in app/views/disguises/index.html.erb</p>
+
+<div class="row">
+  <% @disguises.each do |disguise| %>
+    <div class="col-sm-6">
+      <div class="card-disguise">
+        <img src="https://source.unsplash.com/HQ_USRr5AU4" />
+        <div class="card-disguise-infos">
+          <div>
+            <h2><%= disguise.title %></h2>
+            <p><%= disguise.description %></p>
+          </div>
+          <h2 class="card-disguise-pricing"> <%= disguise.price_per_day%></h2>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
