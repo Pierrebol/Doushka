@@ -37,3 +37,50 @@
   align-items: flex-end;
   position: relative;
 }
+
+.cards-landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top:30px;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+.card-landing {
+    width: 200px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgb(230, 230, 230);
+    text-align: center;
+    padding: 20px;
+    border: 1px solid rgb(230,230,230);
+    margin-bottom: 22px;
+}
+
+.card-landing img {
+    height: 100px;
+}
+
+.card-landing:hover {
+    opacity: 0.5;
+}
+
+.card-landing h4 {
+  font-size: 20px;
+  font-weight:bold;
+  padding: 10px;
+}
+
+.card-landing p {
+  font-size: 12px;
+  font-weight:lighter;
+}
+
+
+
+
+
+
