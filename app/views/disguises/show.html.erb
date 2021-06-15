@@ -1,2 +1,26 @@
-<h1>Disguises#show</h1>
-<p>Find me in app/views/disguises/show.html.erb</p>
+<div class="d-flex">
+
+  <div class="show-disguise-img">
+    <img src="https://source.unsplash.com/HQ_USRr5AU4" alt="">
+  </div>
+
+  <div class="show-disguise-infos">
+    <div class="disguise-title">
+      <h1><%= @disguise.title %></h1>
+    </div>
+    <div class="disguise-details">
+      <h3><%= @disguise.category %></h3>
+      <p><%= @disguise.description %></p>
+    </div>
+    <div class="disguise-details">
+      <h3><%= @disguise.price_per_day %>€ la journée</h3>
+    </div>
+  </div>
+  <div class="show-card-booking">
+    <p>Date de début: <em>20/06/2021</em></p>
+    <p>Date de fin: <em>22/06/2021</em></p>
+    <br>
+    <p><strong>Prix estimé:</strong> 30€</p>
+    <a class="btn btn-primary" href="#">Louez-moi</a>
+  </div>
+</div>
