@@ -1,4 +1,10 @@
+<div class="d-flex justify-content-between">
 <h1 class="ml-4 mt-4">Trouvez votre déguisement !</h1>
+<% if user_signed_in? %>
+  <a class="btn btn-primary rounded mt-4 mr-4" href=<%=new_disguise_path%> >Ajouter un <br>nouveau déguisement</a>
+<% end %>
+</div>
+
 <div class="row">
   <% @disguises.each do |disguise| %>
     <div class="col-sm-4 d-flex justify-content-center">
@@ -7,7 +13,7 @@
           <div class="card-disguise-infos">
             <div class="card-name-and-description">
               <h2><%= link_to(disguise.title, disguise_path(disguise)) %></h2>
-              <p><%= disguise.description %></p>
+              <p><%= disguise.description%></p>
             </div>
             <h2 class="card-disguise-pricing"> <%= disguise.price_per_day%>€/ jour</h2>
           </div>
