@@ -1,0 +1,7 @@
+<h1>All your bookings</h1>
+
+<%= @bookings.each do |booking| %>
+  <%= booking.disguise.title %>
+  <%= booking.disguise.price_per_day %>
+  <%= booking.status %>
+<% end %>
