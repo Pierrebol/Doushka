@@ -5,11 +5,11 @@
       <div class="card-disguise">
           <img src="https://source.unsplash.com/HQ_USRr5AU4" />
           <div class="card-disguise-infos">
-            <div>
+            <div class="card-name-and-description">
               <h2><%= link_to(disguise.title, disguise_path(disguise)) %></h2>
               <p><%= disguise.description %></p>
             </div>
-            <h2 class="card-disguise-pricing"> <%= disguise.price_per_day%></h2>
+            <h2 class="card-disguise-pricing"> <%= disguise.price_per_day%>€/ jour</h2>
           </div>
       </div>
     </div>
