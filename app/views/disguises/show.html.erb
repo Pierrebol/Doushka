@@ -16,7 +16,7 @@
       <p><%= @disguise.description %></p>
     </div>
     <div class="disguise-details">
-      <h3><%= @disguise.price_per_day %>€ la journée</h3>
+      <h3><%= @disguise.price_per_day%>€ la journée</h3>
     </div>
   </div>
   <div class="show-card-booking">
@@ -24,6 +24,10 @@
     <p>Date de fin: <em>22/06/2021</em></p>
     <br>
     <p><strong>Prix estimé:</strong> 30€</p>
-    <a class="btn btn-primary" href="#">Louez-moi</a>
+    <% if user_signed_in? %>
+      <a class="btn btn-primary" href=<%=new_booking_path%> >Louez-moi</a>
+    <% else %>
+      <a class="btn btn-primary" href=<%=new_user_session_path %>>Louez-moi</a>
+    <% end %>
   </div>
 </div>

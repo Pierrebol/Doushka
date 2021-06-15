@@ -1,6 +1,10 @@
 class DisguisesController < ApplicationController
   def index
-    @disguises = Disguise.all
+    if params[:my_disguises]
+      @disguises = Disguise.where(user: current_user)
+    else
+      @disguises = Disguise.all
+    end
   end
 
   def show
