@@ -1,0 +1,26 @@
+.search_bar input[type=text]{
+  width:300px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: solid thin lightgrey;
+  padding: 5px 10px;
+}
+
+.search_bar{
+  float:center;
+  margin:7px;
+  display: flex;
+  justify-content: center;
+}
+
+.search_bar button{
+  background-color: #0074D9;
+  color: #f2f2f2;
+  float: right;
+  padding: 5px 10px;
+  margin-right: 16px;
+  border: solid thin lightgrey;
+  cursor: pointer;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
