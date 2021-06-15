@@ -42,6 +42,6 @@ class DisguisesController < ApplicationController
   private 
 
   def disguise_params
-      params.require(:disguise).permit(:title)
+      params.require(:disguise).permit(:title, :photo)
   end
 end
