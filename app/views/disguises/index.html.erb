@@ -1,9 +1,24 @@
+
 <div class="d-flex justify-content-between">
 <h1 class="ml-4 mt-4">Trouvez votre déguisement !</h1>
 <% if user_signed_in? %>
   <a class="btn btn-warning rounded mt-4 mr-4" href=<%=new_disguise_path%> >Ajouter un <br>nouveau déguisement</a>
 <% end %>
+</div><br>
+
+<div class="search_bar">
+  <form action="#">
+    <input type="text"
+        placeholder="Rechercher un déguisement"
+        name="search">
+    <button>
+        <i class="fa fa-search"
+            style="font-size: 18px;">
+        </i>
+    </button>
+  </form>
 </div>
+
 
 <div class="row">
   <% @disguises.each do |disguise| %>
