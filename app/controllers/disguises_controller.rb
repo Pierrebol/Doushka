@@ -13,6 +13,7 @@ class DisguisesController < ApplicationController
 
   def create
       @disguise = Disguise.new(disguise_params)
+      @disguise.user = current_user
 
       if @disguise.save
         redirect_to disguise_path(@disguise)
@@ -24,7 +25,13 @@ class DisguisesController < ApplicationController
 
   def edit
     @disguise = Disguise.find(params[:id])
+    @disguise.user = current_user
 
+    if @disguise.save
+      redirect_to disguise_path(@disguise)
+    else
+      render :new
+    end
   end
 
   def update
