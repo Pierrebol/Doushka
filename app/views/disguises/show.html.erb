@@ -19,9 +19,12 @@
       <h3><%= @disguise.price_per_day%>€ la journée</h3>
     </div>
   </div>
+  
   <div class="show-card-booking">
-    <p>Date de début: <em>20/06/2021</em></p>
-    <p>Date de fin: <em>22/06/2021</em></p>
+    <%= simple_form_for [@booking, @disguise] do |f| %>
+    <%= f.input :start_date, as: :datetime, html5: true %>
+    <%= f.input :end_date, as: :datetime, html5: true %>
+    <% end %>
     <br>
     <p><strong>Prix estimé:</strong> 30€</p>
     <% if user_signed_in? %>
