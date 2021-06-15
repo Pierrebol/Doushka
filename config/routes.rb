@@ -1,16 +1,8 @@
 Rails.application.routes.draw do
+  resources :disguises
+ 
+  resources :bookings, only: [:index, :new, :create, :destroy]
 
-  get 'disguises/index'
-  get 'disguises/show'
-  get 'disguises/new'
-  get 'disguises/create'
-  get 'disguises/update'
-  get 'disguises/edit'
-  get 'disguises/destroy'
-
-  get 'bookings/new'
-  get 'bookings/create'
-  get 'bookings/destroy'
 
   devise_for :users
   root to: 'pages#home'
