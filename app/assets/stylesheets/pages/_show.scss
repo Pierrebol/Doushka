@@ -35,3 +35,13 @@
   border-radius: 5px;
   padding:10px;
 }
+
+.btn-outline-secondary:before {
+  content:'\f060';
+  font-family: FontAwesome;
+  padding-right:10px;
+}
+
+.back_button {
+  margin:20px;
+}
