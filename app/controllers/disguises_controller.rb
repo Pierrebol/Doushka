@@ -1,6 +1,10 @@
 class DisguisesController < ApplicationController
   def index
-    @disguises = Disguise.all 
+    if params[:my_disguises]
+      @disguises = Disguise.where(user: current_user)
+    else
+      @disguises = Disguise.all
+    end
   end
 
   def show
@@ -19,7 +23,7 @@ class DisguisesController < ApplicationController
       else
         render :new
       end
-    
+
   end
 
   def edit
@@ -39,7 +43,7 @@ class DisguisesController < ApplicationController
     redirect_to disguises_path
   end
 
-  private 
+  private
 
   def disguise_params
       params.require(:disguise).permit(:title)
