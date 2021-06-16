@@ -11,16 +11,13 @@ const initMapbox = () => {
       style: 'mapbox://styles/mapbox/streets-v10'
     });  
     const markers = JSON.parse(mapElement.dataset.markers);
-  	if (markers.lenght > 0) {
-  		markers.forEach((marker) => {
-    	new mapboxgl.Marker()
-       .setLngLat([ marker.lng, marker.lat ])
-      .addTo(map);
-
-  		});
+	markers.forEach((marker) => {
+	new mapboxgl.Marker()
+		.setLngLat([ marker.lng, marker.lat ])
+		.addTo(map);
+  	});
   	 fitMapToMarkers(map, markers);
 	}
-  }
 };
 
 // app/javascript/plugins/init_mapbox.js

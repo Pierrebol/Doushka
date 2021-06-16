@@ -25,7 +25,8 @@ user4 = User.create!(email: "dez@edhec.com", password: "azerty")
   price_per_day: [30, 70, 10, 100, 50].sample,
   category: Faker::Fantasy::Tolkien.race,
   size: ["XL", "L", "M", "S"].sample,
-  gender: ["Homme", "Femme", "Unisex", "Enfant"].sample
+  gender: ["Homme", "Femme", "Unisex", "Enfant"].sample,
+  address: '16 Villa Gaudelet, Paris'
   )
   disguise.user = [user1, user2, user3, user4].sample
   disguise.save!
