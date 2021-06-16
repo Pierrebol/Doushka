@@ -15,6 +15,7 @@ class DisguisesController < ApplicationController
 
   def show
     @disguise = Disguise.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -22,15 +23,14 @@ class DisguisesController < ApplicationController
   end
 
   def create
-      @disguise = Disguise.new(disguise_params)
-      @disguise.user = current_user
+    @disguise = Disguise.new(disguise_params)
+    @disguise.user = current_user
 
-      if @disguise.save
-        redirect_to disguise_path(@disguise)
-      else
-        render :new
-      end
-
+    if @disguise.save
+      redirect_to disguise_path(@disguise)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -59,6 +59,6 @@ class DisguisesController < ApplicationController
   private
 
   def disguise_params
-      params.require(:disguise).permit(:title, :photo)
+    params.require(:disguise).permit(:title, :description, :price_per_day, :category, :size, :gender, :photo)
   end
 end

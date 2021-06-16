@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   get 'profiles/profile'
-  resources :disguises
+  resources :disguises do
+    resources :bookings, only: :create
+  end
 
-  resources :bookings, only: [:index, :new, :create, :destroy]
+  resources :bookings, only: [ :destroy, :index ]
 
 
   devise_for :users

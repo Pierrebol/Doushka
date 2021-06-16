@@ -31,6 +31,7 @@ import "bootstrap";
 import { loadDynamicIndexText } from '../components/index';
 import { initMapbox } from '../plugins/init_mapbox';
 import { loadDynamicBannerText } from '../components/banner';
+import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('banner-typed-text')) {
@@ -40,5 +41,6 @@ document.addEventListener('turbolinks:load', () => {
     loadDynamicIndexText();
   }
   initMapbox();
-
+  initFlatpickr();
 });
+

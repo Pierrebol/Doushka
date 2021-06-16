@@ -1,7 +1,7 @@
 
 <div class="d-flex justify-content-between">
-<h1 class="ml-4 mt-4" id="dynamic_title">Devenez 
-  <span id="index-typed-text" > </span> 
+<h1 class="ml-4 mt-4" id="dynamic_title">Devenez
+  <span id="index-typed-text" > </span>
 </h1>
 <% if user_signed_in? %>
   <a class="btn btn-warning rounded mt-4 mr-4" href=<%=new_disguise_path%> >Ajouter un <br>nouveau déguisement</a>
@@ -24,16 +24,18 @@
 <div class="content"> 
   <div class="cards-disguise">
     <% @disguises.each do |disguise| %>
-        <div class="card-disguise">
-          <img src="https://source.unsplash.com/HQ_USRr5AU4" />
-          <div class="card-disguise-infos">
-            <div class="card-name-and-description">
-              <h2><%= link_to(disguise.title, disguise_path(disguise), class: "link_disguise")%></h2>
-              <p><%= disguise.description%></p>
-            </div>
-            <h2 class="card-disguise-pricing"> <%= disguise.price_per_day%>€/ jour</h2>
+      <%= link_to disguise_path(disguise), class: "link_disguise" do %>
+          <div class="card-disguise">
+            <img src="https://source.unsplash.com/HQ_USRr5AU4" />
+            <div class="card-disguise-infos">
+              <div class="card-name-and-description">
+                <h2><%= disguise.title %></h2>
+                <p><%= disguise.description%></p>
+              </div>
+              <h2 class="card-disguise-pricing"> <%= disguise.price_per_day%>€/ jour</h2>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 
@@ -43,5 +45,3 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
 </div>
-
-
