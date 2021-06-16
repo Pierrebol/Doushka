@@ -5,7 +5,7 @@
 <div class="d-flex">
   <div class="show-disguise-img">
     <% if @disguise.photo.attached? %>
-      <%= cl_image_tag @disguise.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @disguise.photo.key, height: 600, width: 400, :gravity=>"faces", crop: :fill %>
     <% else %>
       <img src="https://source.unsplash.com/HQ_USRr5AU4" alt="">
     <% end %>
@@ -36,4 +36,6 @@
       <p><strong>Prix estimé:</strong> 30€</p>
     </div>
   </div>
+  </div>
+
 
