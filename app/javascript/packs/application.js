@@ -25,35 +25,26 @@ require("channels")
 // External imports
 import "bootstrap";
 
+
 // Internal imports, e.g:
 import { changeBookingStatus } from '../components/confirmationButton';
 // import { initSelect2 } from '../components/init_select2';
-
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-});
-
-
+import { loadDynamicIndexText } from '../components/index';
+import { initMapbox } from '../plugins/init_mapbox';
 import { loadDynamicBannerText } from '../components/banner';
-
-document.addEventListener('turbolinks:load', () => {
-  // Call your JS functions here
-  // [...]
-  loadDynamicBannerText();
-  changeBookingStatus();
-});
-
-
 import { initFlatpickr } from "../plugins/flatpickr";
 
-initFlatpickr();
-
-import { loadDynamicIndexText } from '../components/index';
-
 document.addEventListener('turbolinks:load', () => {
-  // Call your JS functions here
-  // [...]
-  loadDynamicIndexText();
+
+  if (document.getElementById('banner-typed-text')) {
+    loadDynamicBannerText();
+  }
+  if (document.getElementById('index-typed-text')) {
+    loadDynamicIndexText();
+  }
+  initMapbox();
+  initFlatpickr();
 });
+
+
 
