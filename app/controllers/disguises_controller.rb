@@ -9,6 +9,7 @@ class DisguisesController < ApplicationController
 
   def show
     @disguise = Disguise.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
