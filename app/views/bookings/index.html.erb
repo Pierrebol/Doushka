@@ -1,33 +1,59 @@
 <div class="d-flex justify-content-between">
-  <h1 class="ml-4 mt-4">Toutes vos réservations:</h1>
+  <h1 class="ml-4 mt-4">Toutes vos demandes de réservations:</h1>
 </div><br>
 
-<% @bookings.each do |booking| %>
-<div class="notification">
-  <img src='https://source.unsplash.com/HQ_USRr5AU4' class="avatar-large" />
-  <div class="notification-content d-flex justify-content-between align-items-center">
-    <div class="notification-content-info">
-    <p><small><%= booking.disguise.title %></small></p>
-    <p><%= booking.disguise.description %></p>
-    <p><%= booking.disguise.price_per_day %>€</p>
+<div class="waiting_bookings">
+  <h3>Demandes de réservation en attente de confirmation :</h3>
+  <% @bookings.where(status: "pending").each do |booking| %>
+    <div class="notification">
+      <img src='https://source.unsplash.com/HQ_USRr5AU4' class="avatar-large" />
+      <div class="notification-content d-flex justify-content-between align-items-center">
+        <div class="notification-content-info">
+          <p><small><%= booking.disguise.title %></small></p>
+          <p><%= booking.disguise.description %></p>
+          <p><%= booking.disguise.price_per_day %>€</p>
+        </div>
+        <div class="notification-content-dates">
+          <strong>Début de location : <%= booking.start_date.day %>/<%= booking.start_date.month %>/<%= booking.start_date.year %> <br></strong>
+          <strong>Fin de location : <%= booking.end_date.day %>/<%= booking.end_date.month %>/<%= booking.end_date.year %></strong>
+        </div>
+        <div class="notification-content-status d-flex flex-column align-items-center">
+          <p>Statut:</p>
+          <span class="badge badge-warning">En attente</span>
+        <div class="notification-actions">
+          <%= link_to "accept", accept_booking_path(booking), method: :patch %>
+          <button type="button" class="btn btn-light rounded" id="confirmation_button" data-booking-id="<%= booking %>" data-disguise-id="<%= booking.disguise.id %>" >Confirmer ?</button>
+        </div>
+        </div>
+      </div>
     </div>
-    <div class="notification-content-dates">
-      <strong>Début de location : <%= booking.start_date.day %>/<%= booking.start_date.month %>/<%= booking.start_date.year %> <br></strong>
-      <strong>Fin de location : <%= booking.end_date.day %>/<%= booking.end_date.month %>/<%= booking.end_date.year %></strong>
-    </div>
-    <div class="notification-content-status d-flex flex-column align-items-center">
-      <p>Statut:</p>
-    <% if booking.status == "pending" %>
-      <span class="badge badge-warning">En attente</span>
-    <% elsif booking.status == "refused" %>
-      <span class="badge badge-danger">Refusé</span>
-    <% else %>
-      <span class="badge badge-success">Confirmé</span>
-    <% end %>
-    <div class="notification-actions">
-      <a href="#">Modifier <i class="fas fa-pencil-alt"></i></a>
-    </div>
-    </div>
-  </div>
+  <% end %>
 </div>
-<% end %>
+
+<div class="past_bookings">
+  <h3>Demandes de réservation passées :</h3>
+  <% @bookings.where(status: [ "confirmed", "refused" ]).each do |booking| %>
+    <div class="notification">
+      <img src='https://source.unsplash.com/HQ_USRr5AU4' class="avatar-large" />
+      <div class="notification-content d-flex justify-content-between align-items-center">
+        <div class="notification-content-info">
+          <p><small><%= booking.disguise.title %></small></p>
+          <p><%= booking.disguise.description %></p>
+          <p><%= booking.disguise.price_per_day %>€</p>
+        </div>
+        <div class="notification-content-dates">
+          <strong>Début de location : <%= booking.start_date.day %>/<%= booking.start_date.month %>/<%= booking.start_date.year %> <br></strong>
+          <strong>Fin de location : <%= booking.end_date.day %>/<%= booking.end_date.month %>/<%= booking.end_date.year %></strong>
+        </div>
+        <div class="notification-content-status d-flex flex-column align-items-center">
+          <p>Statut:</p>
+            <% if booking.status == "refused" %>
+              <span class="badge badge-danger">Refusée</span>
+            <% else %>
+              <span class="badge badge-success">Confirmée</span>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
