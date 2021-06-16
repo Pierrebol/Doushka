@@ -4,7 +4,8 @@
 
 <div class="d-flex">
   <div class="show-disguise-img">
-    <img src="https://source.unsplash.com/HQ_USRr5AU4" alt="">
+    <%= cl_image_tag @disguise.photo.key, height: 300, width: 400, crop: :fill %>
+    <!-- <img src="https://source.unsplash.com/HQ_USRr5AU4" alt=""> -->
   </div>
 
   <div class="show-disguise-infos">
