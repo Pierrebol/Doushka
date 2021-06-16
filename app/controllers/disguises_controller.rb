@@ -59,6 +59,6 @@ class DisguisesController < ApplicationController
   private
 
   def disguise_params
-    params.require(:disguise).permit(:title, :description, :price_per_day, :category, :size, :gender, :photo)
+    params.require(:disguise).permit(:title, :description, :price_per_day, :category, :size, :gender, :photo, :address)
   end
 end

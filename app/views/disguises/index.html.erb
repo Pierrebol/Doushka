@@ -26,7 +26,11 @@
     <% @disguises.each do |disguise| %>
       <%= link_to disguise_path(disguise), class: "link_disguise" do %>
           <div class="card-disguise">
-            <img src="https://source.unsplash.com/HQ_USRr5AU4" />
+            <% if disguise.photo.attached? %>
+              <%= cl_image_tag disguise.photo.key, height: 300, width: 400, crop: :fill %>
+            <% else %>
+              <img src="https://source.unsplash.com/HQ_USRr5AU4" alt="">
+            <% end %>
             <div class="card-disguise-infos">
               <div class="card-name-and-description">
                 <h2><%= disguise.title %></h2>
