@@ -14,9 +14,9 @@
         padding: 8px 24px;
         border-radius: 4px;
         font-weight: bold;
-        background: linear-gradient(#167FFB, #0F60C4);
+        background: linear-gradient(#FFCC29, #FFCC29);
         transition: background 0.3s ease;
-        border: 1px solid #0F60C4;
+        border: 1px solid #FFCC29;
         background-color: gray;
         color: white;
         width: 30%;
@@ -26,7 +26,7 @@
     }
 
     .btn:hover {
-        background: linear-gradient(#147EFF, #0F67DA);
+        background: linear-gradient(#FFCC29, #FFCC29);
         color: white;
     }
 }

@@ -41,3 +41,11 @@ document.addEventListener('turbolinks:load', () => {
   // [...]
   loadDynamicBannerText();
 });
+
+import { loadDynamicIndexText } from '../components/index';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  // [...]
+  loadDynamicIndexText();
+});
