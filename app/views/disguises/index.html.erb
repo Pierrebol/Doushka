@@ -21,27 +21,27 @@
   </form>
 </div>
 
-
-<div class="row">
-  <% @disguises.each do |disguise| %>
-      <div class="col-sm-4 d-flex justify-content-center">
+<div class="content"> 
+  <div class="cards-disguise">
+    <% @disguises.each do |disguise| %>
       <%= link_to disguise_path(disguise), class: "link_disguise" do %>
-        <div class="card-disguise">
-          <% if disguise.photo.attached? %>
-            <%= cl_image_tag disguise.photo.key, height: 300, width: 400, crop: :fill %>
-          <% else %>
-            <img src="https://source.unsplash.com/HQ_USRr5AU4" alt="">
-          <% end %>
+          <div class="card-disguise">
+            <img src="https://source.unsplash.com/HQ_USRr5AU4" />
             <div class="card-disguise-infos">
               <div class="card-name-and-description">
                 <h2><%= disguise.title %></h2>
                 <p><%= disguise.description%></p>
               </div>
               <h2 class="card-disguise-pricing"> <%= disguise.price_per_day%>€/ jour</h2>
-            </div>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
 
+  <div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+</div>

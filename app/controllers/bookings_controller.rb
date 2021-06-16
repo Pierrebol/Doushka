@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-      @bookings = Booking.where(user: current_user)
+    @bookings = Booking.where(user: current_user)
   end
 
   def create
@@ -19,6 +19,13 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to bookings.path
+  end
+
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = "confirmed"
+    @booking.save
+    redirect_to bookings_path, notice: "Réservation acceptée !"
   end
 
   private
