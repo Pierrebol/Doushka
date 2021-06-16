@@ -21,3 +21,15 @@
 	font-size: 50px;
 	color: #FFCC29;
 }
+
+.content {
+	display: flex;
+}
+
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding-left: 20px;
+}

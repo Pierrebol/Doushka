@@ -5,6 +5,12 @@ class DisguisesController < ApplicationController
     else
       @disguises = Disguise.all
     end
+    @markers = @disguises.geocoded.map do |disguise|
+      {
+        lat: disguise.latitude,
+        lng: disguise.longitude
+      }
+    end
   end
 
   def show
