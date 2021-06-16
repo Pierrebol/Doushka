@@ -27,6 +27,7 @@ import "bootstrap";
 
 
 // Internal imports, e.g:
+import { displayBookingConfirm } from '../plugins/init_sweetalert';
 import { changeBookingStatus } from '../components/confirmationButton';
 // import { initSelect2 } from '../components/init_select2';
 import { loadDynamicIndexText } from '../components/index';
@@ -35,7 +36,6 @@ import { loadDynamicBannerText } from '../components/banner';
 import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
-
   if (document.getElementById('banner-typed-text')) {
     loadDynamicBannerText();
   }
@@ -44,7 +44,6 @@ document.addEventListener('turbolinks:load', () => {
   }
   initMapbox();
   initFlatpickr();
+  displayBookingConfirm();
 });
-
-
 

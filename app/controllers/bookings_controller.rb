@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @disguise = Disguise.find(params[:disguise_id])
     @booking.disguise = @disguise
     if @booking.save
-      redirect_to booking_path(@booking), notice: "La résa est faite"
+      redirect_to disguise_bookings_path(@booking), notice: "La résa est faite"
     else
       render disguise_path(@disguise), notice: "pas valide"
     end

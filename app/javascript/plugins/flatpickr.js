@@ -4,7 +4,8 @@ import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 const initFlatpickr = () => {
   flatpickr("#start_date", {
     altInput: true,
-    plugins: [new rangePlugin({ input: "#end_date"})]
+    plugins: [new rangePlugin({ input: "#end_date"})],
+    minDate: "today",
   });
 }
 
