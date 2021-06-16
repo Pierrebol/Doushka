@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
+import { changeBookingStatus } from '../components/confirmationButton';
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
@@ -40,6 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
   loadDynamicBannerText();
+  changeBookingStatus();
 });
 
 
