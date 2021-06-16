@@ -6,7 +6,7 @@ const displayBookingConfirm = () => {
     const dates = document.getElementById('start_date')
     btnBooking.addEventListener('click', (event) => {
       swal({
-        title: "Vos dates de réservation 👇",
+        title: "Vos dates de reservation 👇",
         text: `${dates.value}`,
         icon: "warning",
         closeOnClickOutside: false,
