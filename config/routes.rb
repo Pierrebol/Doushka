@@ -4,7 +4,13 @@ Rails.application.routes.draw do
     resources :bookings, only: :create
   end
 
-  resources :bookings, only: [ :destroy, :index ]
+  resources :bookings, only: [ :destroy, :index ] do
+    member do
+      patch '/accept', to: 'bookings#accept'
+    end
+  end
+
+
 
 
   devise_for :users

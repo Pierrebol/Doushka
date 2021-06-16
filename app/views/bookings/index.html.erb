@@ -21,7 +21,8 @@
           <p>Statut:</p>
           <span class="badge badge-warning">En attente</span>
         <div class="notification-actions">
-          <button type="button" class="btn btn-light rounded" id="confirmation_button" data-booking-id = <%= booking.id %>>Confirmer ?</button>
+          <%= link_to "accept", accept_booking_path(booking), method: :patch %>
+          <button type="button" class="btn btn-light rounded" id="confirmation_button" data-booking-id="<%= booking %>" data-disguise-id="<%= booking.disguise.id %>" >Confirmer ?</button>
         </div>
         </div>
       </div>
