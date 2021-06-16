@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
+import { displayBookingConfirm } from '../plugins/init_sweetalert';
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
@@ -39,7 +40,7 @@ import { loadDynamicBannerText } from '../components/banner';
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
-  loadDynamicBannerText();
+  displayBookingConfirm();
 });
 
 
@@ -52,6 +53,6 @@ import { loadDynamicIndexText } from '../components/index';
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
-  loadDynamicIndexText();
+  // loadDynamicIndexText();
 });
 
