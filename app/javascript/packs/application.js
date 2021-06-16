@@ -42,6 +42,16 @@ document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
 });
 
+
 import { initFlatpickr } from "../plugins/flatpickr";
 
 initFlatpickr();
+
+import { loadDynamicIndexText } from '../components/index';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  // [...]
+  loadDynamicIndexText();
+});
+

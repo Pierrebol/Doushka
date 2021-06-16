@@ -1,7 +1,33 @@
-<h1>All your bookings</h1>
+<div class="d-flex justify-content-between">
+  <h1 class="ml-4 mt-4">Toutes vos réservations:</h1>
+</div><br>
 
-<%= @bookings.each do |booking| %>
-  <%= booking.disguise.title %>
-  <%= booking.disguise.price_per_day %>
-  <%= booking.status %>
+<% @bookings.each do |booking| %>
+<div class="notification">
+  <img src='https://source.unsplash.com/HQ_USRr5AU4' class="avatar-large" />
+  <div class="notification-content d-flex justify-content-between align-items-center">
+    <div class="notification-content-info">
+    <p><small><%= booking.disguise.title %></small></p>
+    <p><%= booking.disguise.description %></p>
+    <p><%= booking.disguise.price_per_day %>€</p>
+    </div>
+    <div class="notification-content-dates">
+      <strong>Début de location : <%= booking.start_date.day %>/<%= booking.start_date.month %>/<%= booking.start_date.year %> <br></strong>
+      <strong>Fin de location : <%= booking.end_date.day %>/<%= booking.end_date.month %>/<%= booking.end_date.year %></strong>
+    </div>
+    <div class="notification-content-status d-flex flex-column align-items-center">
+      <p>Statut:</p>
+    <% if booking.status == "pending" %>
+      <span class="badge badge-warning">En attente</span>
+    <% elsif booking.status == "refused" %>
+      <span class="badge badge-danger">Refusé</span>
+    <% else %>
+      <span class="badge badge-success">Confirmé</span>
+    <% end %>
+    <div class="notification-actions">
+      <a href="#">Modifier <i class="fas fa-pencil-alt"></i></a>
+    </div>
+    </div>
+  </div>
+</div>
 <% end %>
