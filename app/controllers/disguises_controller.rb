@@ -35,18 +35,12 @@ class DisguisesController < ApplicationController
 
   def edit
     @disguise = Disguise.find(params[:id])
-    @disguise.user = current_user
-
-    if @disguise.save
-      redirect_to disguise_path(@disguise)
-    else
-      render :new
-    end
   end
 
   def update
     @disguise = Disguise.find(params[:id])
-    @disguise.update(params[:disguise])
+    @disguise.update(disguise_params)
+    redirect_to disguise_path(@disguise)
   end
 
   def destroy
