@@ -1,7 +1,12 @@
 class DisguisesController < ApplicationController
   def index
-    if params[:my_disguises]
-      @disguises = Disguise.where(user: current_user)
+    # if params[:my_disguises]
+    #   @disguises = Disguise.where(user: current_user)
+    # else
+    #   @disguises = Disguise.all
+    # end
+    if params[:search].present?
+      @disguises = Disguise.search_by_title_and_description(params[:search])
     else
       @disguises = Disguise.all
     end
