@@ -41,6 +41,7 @@
   padding-bottom: 31px;
   margin-bottom: 15px;
   border-radius: 6px;
+  box-shadow: 2px;
 }
 
 #cleanbtn {
@@ -54,41 +55,4 @@
   margin-left:30px;
   margin-right: 54px;
   height:70px;
-}
-
-#map {
-  height: 80vh;
-  position: sticky;
-  top: 0;
-}
-
-
-/*Smallest device*/
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards-disguise {
-    grid-template-columns: 1fr;
-  }
-  #map {
-    display: none;
-  }
-}
-
-/*Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {
-  .cards-disguise {
-    grid-template-columns: 1fr 1fr;
-  }
-  #map {
-    display: none;
-  }
-}
-
-/*Medium devices (tablets, 768px and up)*/
-@media (min-width: 1200px) {
-  .cards-disguise {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  #map {
-    display: block;
-  }
 }

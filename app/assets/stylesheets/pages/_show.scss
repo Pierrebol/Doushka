@@ -3,6 +3,7 @@
   display: flex;
   margin-bottom: 20px;
   justify-content: space-between;
+  padding-bottom:25px;
 }
 
 .show-disguise-img {
@@ -49,20 +50,22 @@
   padding:10px;
 }
 
-.btn-outline-secondary:before {
+#mybtn2:before {
   content:'\f060';
   font-family: FontAwesome;
   padding-right:10px;
 }
 
 .back_button {
-  margin:20px;
-  margin-left:0px;
+  margin-left:60px;
+  padding-top: 20px;
 }
 
 .cards-disguise-show {
   padding: 0px;
   display:flex;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+
 }
 
 .resa-info {
@@ -75,3 +78,18 @@
    width: 400px;
 }
 
+.container-show {
+  background-color: white;
+  padding: 70px;
+  margin: 30px 60px 60px 60px;
+  border-radius: 6px;
+
+}
+.all-container-show {
+  background-color: #6E0330;
+  padding-bottom:20px;
+}
+
+#map {
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
