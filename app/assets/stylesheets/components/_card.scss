@@ -1,10 +1,7 @@
 .cards-disguise {
-  flex-grow: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  padding: 16px;
-  // display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 }
 
 .card-disguise {
@@ -12,7 +9,7 @@
   background-position: center;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 100%;
+  width: 90%;
   height: 400px;
   margin:30px;
   align-items: center;
@@ -101,11 +98,11 @@
 }
 
 .link_disguise {
-  color: #FFCC29;
+  color: black;
 }
 
 .link_disguise:hover {
-  color: orange;
+  color: black;
 }
 
 
