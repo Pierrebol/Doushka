@@ -17,10 +17,12 @@ const initMapbox = () => {
 		.addTo(map);
   	});
   	 fitMapToMarkers(map, markers);
+  // map.addControl(new MapboxGeocoder({ 
+  //   accessToken: mapboxgl.accessToken,
+  //     mapboxgl: mapboxgl 
+  //   }));
 	}
 };
-
-// app/javascript/plugins/init_mapbox.js
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
@@ -28,5 +30,6 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
 
+// app/javascript/plugins/init_mapbox.js
 
 export { initMapbox };
