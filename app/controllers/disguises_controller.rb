@@ -30,7 +30,7 @@ class DisguisesController < ApplicationController
     @disguise.user = current_user
 
     if @disguise.save
-      redirect_to disguise_path(@disguise)
+      redirect_to my_disguises_path
     else
       render :new
     end
