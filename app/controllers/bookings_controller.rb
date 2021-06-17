@@ -5,11 +5,12 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user
     @disguise = Disguise.find(params[:disguise_id])
+    @booking.user = current_user
     @booking.disguise = @disguise
+    @booking.status = "pending"
     if @booking.save
-      redirect_to disguise_bookings_path(@booking), notice: "La résa est faite"
+      redirect_to bookings_path, notice: "La résa est faite"
     else
       render disguise_path(@disguise), notice: "pas valide"
     end
