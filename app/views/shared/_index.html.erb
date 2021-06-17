@@ -1,6 +1,6 @@
 <div class="cards-container">
   <div class="cards-disguise">
-    <% @disguises.each do |disguise| %>
+    <% disguises.each do |disguise| %>
       <%= link_to disguise_path(disguise), class: "link_disguise" do %>
         <div class="card-disguise">
           <% if params[:my_disguises].present? %>
@@ -23,4 +23,3 @@
       <% end %>
     <% end %>
   </div>
-</div>
