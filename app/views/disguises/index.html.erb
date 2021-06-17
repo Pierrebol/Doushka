@@ -1,11 +1,11 @@
 
 <div class="d-flex justify-content-between">
-<h1 class="ml-4 mt-4" id="dynamic_title">Devenez
-  <span id="index-typed-text" > </span>
-</h1>
-<% if user_signed_in? %>
-  <a class="btn btn-warning rounded mt-4 mr-4" href=<%=new_disguise_path%> >Ajouter un <br>nouveau déguisement</a>
-<% end %>
+  <h1 class="ml-4 mt-4" id="dynamic_title">Devenez
+    <span id="index-typed-text" > </span>
+  </h1>
+  <% if user_signed_in? %>
+    <a class="btn btn-warning rounded mt-4 mr-4" href=<%=new_disguise_path%> >Ajouter un <br>nouveau déguisement</a>
+  <% end %>
 </div><br>
 
 <div class="search_bar">
@@ -26,8 +26,10 @@
     <%= link_to disguise_path(disguise), class: "link_disguise" do %>
       <div class="card-disguise">
         <% if params[:my_disguises].present? %>
-          <%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, disguise_path(disguise), method: :delete, data: { confirm: "Are you sure ?"}, class:"delete-disguise" %>
-          <%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_disguise_path(disguise), class:"edit-disguise" %>
+          <i class="far fa-trash-alt delete-disguise"></i>
+          <i class="far fa-edit edit-disguise"></i>
+          <%#= link_to ('<i class="far fa-trash-alt"></i>').html_safe, disguise_path(disguise), method: :delete, data: { confirm: "Are you sure ?"}, class:"delete-disguise" %>
+          <%#= link_to ('<i class="far fa-edit"></i>').html_safe, edit_disguise_path(disguise), class:"edit-disguise" %>
         <% end %>
         <% if disguise.photo.attached? %>
           <%= cl_image_tag disguise.photo.key, height: 600, width: 400, :gravity=>"faces", crop: :fill %>
@@ -40,6 +42,8 @@
             <p><%= disguise.description%></p>
           </div>
           <h2 class="card-disguise-pricing"> <%= disguise.price_per_day%>€/ jour</h2>
+          <%#= link_to ('<i class="far fa-trash-alt"></i>').html_safe, disguise_path(disguise), method: :delete, data: { confirm: "Are you sure ?"}, class:"delete-disguise" %>
+          <%#= link_to ('<i class="far fa-edit"></i>').html_safe, edit_disguise_path(disguise), class:"edit-disguise" %>
         </div>
       </div>
     <% end %>
