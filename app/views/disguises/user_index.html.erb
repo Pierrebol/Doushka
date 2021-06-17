@@ -5,19 +5,6 @@
   </h1>
     <a class="btn btn-outline-light" id="cleanbtn" href=<%=new_disguise_path%> >Ajouter un <br>nouveau déguisement</a>
   </div><br>
-
-  <div class="search_bar">
-    <form action="#">
-      <input type="text"
-          placeholder="Rechercher un déguisement"
-          name="search">
-      <button>
-          <i class="fa fa-search"
-              style="font-size: 18px;">
-          </i>
-      </button>
-    </form>
-  </div>
 </div>
 
 <%= render '/shared/index', disguises: @disguises %>
