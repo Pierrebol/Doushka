@@ -28,6 +28,13 @@ class BookingsController < ApplicationController
     redirect_to bookings_path, notice: "Réservation acceptée !"
   end
 
+  def refuse
+    @booking = Booking.find(params[:id])
+    @booking.status = "refused"
+    @booking.save
+    redirect_to bookings_path, notice: "Réservation refusée !"
+  end
+
   private
 
   def booking_params
