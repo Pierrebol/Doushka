@@ -1,4 +1,16 @@
 <div class="cards-container">
+  <div class="search_bar">
+    <form action="#">
+      <input type="text"
+          placeholder="Rechercher un déguisement"
+          name="search">
+      <button>
+          <i class="fa fa-search"
+              style="font-size: 18px;">
+          </i>
+      </button>
+    </form>
+  </div>
   <div class="cards-disguise">
     <% disguises.each do |disguise| %>
       <%= link_to disguise_path(disguise), class: "link_disguise" do %>
