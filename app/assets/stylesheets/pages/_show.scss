@@ -1,7 +1,7 @@
 .show-disguise-container {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 20px;
+  justify-content: space-between;
 }
 
 .show-disguise-img {
@@ -18,7 +18,7 @@
 
 .show-disguise-infos {
   background:white;
-  width: 500px;
+  width: 250px;
   border-radius:5px;
 }
 
@@ -46,5 +46,16 @@
 
 .back_button {
   margin:20px;
+  margin-left:0px;
 }
+
+.cards-disguise-show {
+  padding: 0px;
+  display:flex;
+}
+
+.form-wrapper {
+  width: 400px;
+}
+
 
