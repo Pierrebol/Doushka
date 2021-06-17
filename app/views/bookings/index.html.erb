@@ -9,13 +9,13 @@
       <img src='https://source.unsplash.com/HQ_USRr5AU4' class="avatar-large" />
       <div class="notification-content d-flex justify-content-between align-items-center">
         <div class="notification-content-info">
-          <p><small><%= booking.disguise.title %></small></p>
+          <h4><small><%= booking.disguise.title %></small></h4>
           <p><%= booking.disguise.description %></p>
-          <p><%= booking.disguise.price_per_day %>€</p>
+          <p id="price_booking_notif"><%= booking.disguise.price_per_day %>€</p>
         </div>
         <div class="notification-content-dates">
-          <strong>Début de location : <%= booking.start_date.day %>/<%= booking.start_date.month %>/<%= booking.start_date.year %> <br></strong>
-          <strong>Fin de location : <%= booking.end_date.day %>/<%= booking.end_date.month %>/<%= booking.end_date.year %></strong>
+          <strong>Début : <%= booking.start_date.day %>/<%= booking.start_date.month %>/<%= booking.start_date.year %> <br></strong>
+          <strong>Fin : <%= booking.end_date.day %>/<%= booking.end_date.month %>/<%= booking.end_date.year %></strong>
         </div>
         <div class="notification-content-status d-flex flex-column align-items-center">
           <p>Statut:</p>
