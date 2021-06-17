@@ -67,3 +67,4 @@ gem 'devise'
 
 gem 'cloudinary', '~> 1.16.0'
 gem 'faker'
+gem 'pg_search', '~> 2.3.0'

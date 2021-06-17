@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :bookings, only: :create
   end
 
+  get '/my_disguises', to: 'disguises#user_index'
+
   resources :bookings, only: [ :destroy, :index ] do
     member do
       patch '/accept', to: 'bookings#accept'

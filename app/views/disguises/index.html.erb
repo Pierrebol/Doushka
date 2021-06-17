@@ -8,43 +8,18 @@
   <% end %>
   </div><br>
 
-  <!-- <div class="search_bar">
-    <form action="#">
-      <input type="text"
-          placeholder="Rechercher un déguisement"
-          name="search">
-      <button>
-          <i class="fa fa-search"
-              style="font-size: 18px;">
-          </i>
-      </button>
-    </form>
-  </div>
-  -->
-  <div class="cards-container">
-    <div class="cards-disguise">
-      <% @disguises.each do |disguise| %>
-        <%= link_to disguise_path(disguise), class: "link_disguise" do %>
-          <div class="card-disguise">
-            <% if params[:my_disguises].present? %>
-              <%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, disguise_path(disguise), method: :delete, data: { confirm: "Are you sure ?"}, class:"delete-disguise" %>
-              <%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_disguise_path(disguise), class:"edit-disguise" %>
-            <% end %>
-            <% if disguise.photo.attached? %>
-              <%= cl_image_tag disguise.photo.key, height: 600, width: 400, :gravity=>"faces", crop: :fill %>
-            <% else %>
-              <img src="https://source.unsplash.com/HQ_USRr5AU4" alt="">
-            <% end %>
-            <div class="card-disguise-infos">
-              <div class="card-name-and-description">
-                <h2><%= disguise.title %></h2>
-                <p><%= disguise.description%></p>
-              </div>
-              <h2 class="card-disguise-pricing"> <%= disguise.price_per_day%>€/ jour</h2>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>   
+<div class="search_bar">
+  <form action="#">
+    <input type="text"
+        placeholder="Rechercher un déguisement"
+        name="search">
+    <button>
+        <i class="fa fa-search"
+            style="font-size: 18px;">
+        </i>
+    </button>
+  </form>
 </div>
+
+<%= render '/shared/index', disguises: @disguises %>
+
