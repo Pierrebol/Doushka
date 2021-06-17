@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [ :destroy, :index ] do
     member do
       patch '/accept', to: 'bookings#accept'
+      patch '/refuse', to: 'bookings#refuse'
     end
   end
 

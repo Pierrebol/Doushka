@@ -5,17 +5,12 @@ class DisguisesController < ApplicationController
     else
       @disguises = Disguise.all
     end
-    @markers = @disguises.geocoded.map do |disguise|
-      {
-        lat: disguise.latitude,
-        lng: disguise.longitude
-      }
-    end
   end
 
   def show
     @disguise = Disguise.find(params[:id])
     @booking = Booking.new
+    @markers = [{ lat: @disguise.latitude, lng: @disguise.longitude }]
   end
 
   def new
@@ -53,6 +48,6 @@ class DisguisesController < ApplicationController
   private
 
   def disguise_params
-    params.require(:disguise).permit(:title, :description, :price_per_day, :category, :size, :gender, :photo)
+    params.require(:disguise).permit(:title, :description, :price_per_day, :category, :size, :gender, :photo, :address)
   end
 end
