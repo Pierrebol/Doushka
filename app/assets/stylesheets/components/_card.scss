@@ -4,6 +4,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   padding: 16px;
+  // display: flex;
 }
 
 .card-disguise {
@@ -16,9 +17,20 @@
   margin:30px;
   align-items: center;
   justify-content: space-around;
+  position: relative;
+}
 
-
-
+.delete-disguise {
+  position:absolute;
+  top: 8px;
+  right: 16px;
+  color: white;
+}
+.edit-disguise {
+  position: absolute;
+  color: white;
+  right: 12px;
+  top: 32px;
 }
 
 .card-disguise > img {
@@ -45,7 +57,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
 }
 
 .cards-landing {
