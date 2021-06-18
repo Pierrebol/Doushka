@@ -5,6 +5,7 @@
   </h1>
     <a class="btn btn-outline-light" id="cleanbtn" href=<%=new_disguise_path%> >Ajouter un <br>nouveau déguisement</a>
   </div><br>
+  <%= render '/shared/index', disguises: @disguises %>
 </div>
 
-<%= render '/shared/index', disguises: @disguises %>
+
