@@ -94,7 +94,7 @@ disguise_6.photo.attach(io: file_6, filename: 'dark_vador.jpg', content_type: 'i
 disguise_6.save
 
 disguise_7 = Disguise.new(title:"Gandalf",
-                description:"J'en peux plus des seeds sa mère",
+                description:"Le plus grand magicien de la Terre du Milieu",
                 price_per_day:68,
                 category: "Fantastique",
                 size: "S",
