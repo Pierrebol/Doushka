@@ -55,7 +55,7 @@
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin-top:30px;
+    margin-top:50px;
     font-size: 16px;
     font-weight: bold;
 }
@@ -68,6 +68,7 @@
     padding: 20px;
     border: 1px solid rgb(230,230,230);
     margin-bottom: 22px;
+    background-color: white;
 }
 
 .card-landing img {
@@ -99,6 +100,15 @@
 
 .card-disguise-infos .title-desc {
   margin-right: 5px;
+}
+
+.title-desc p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 150px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 

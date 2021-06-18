@@ -15,14 +15,63 @@
 
 
 
-h2 {
+.colour-orange h2 {
     font-weight: bold;
-    font-family: "Nunito", "Helvetica", "sans-serif";
+    font-size: 40px;
+    font-family: 'Indie Flower', cursive;
     margin-top: 20px;
     margin-bottom: 20px;
+    color: white;
+
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Indie Flower', cursive;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #6E0330;
+
 }
 .card-body-carousel {
-    box-shadow: 0 0 8px rgba(0,0,0,0.2);
-    padding: 10px;
-    background-color: linen;
+    padding: 30px 10px 10px 10px;
+    background-color: white;
+    height: 150px;
+    padding-top: 10px;
+    border-radius: 30px;
+}
+
+.colour-orange {
+    background-color: #6E0330;
+    padding: 60px 10px 90px 10px;
+    margin: 0px 0px 0px 0px;
+    height: 425px
+}
+
+.carousel-item {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.colour-orange h2 {
+    margin: 0;
+}
+
+.card {
+    border: none !important;
+    border-radius: 30px !important;
+}
+
+#card-car-border {
+    border-radius: 30px !important;
+    padding: 20px 10px 10px 10px !important;
+}
+
+h5 {
+    font-weight: bold;
+}
+
+.testify {
+    display: flex;
 }
