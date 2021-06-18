@@ -30,11 +30,6 @@
 //   top: 32px;
 // }
 
-.card-disguise.img {
-  height: 100%;
-  width: 100%;
-}
-
 .card-disguise h2 {
   font-size: 16px;
   font-weight: bold;
@@ -47,12 +42,11 @@
   margin: 0;
 }
 
-
 .card-disguise .card-disguise-infos {
   padding: 12px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .cards-landing {
@@ -64,7 +58,6 @@
     margin-top:30px;
     font-size: 16px;
     font-weight: bold;
-
 }
 
 .card-landing {
@@ -98,6 +91,14 @@
 
 .link_disguise:hover {
   color: black;
+}
+
+.card-disguise-img img {
+  width: 100%;
+}
+
+.price-del-edit {
+  width: 50px;
 }
 
 
