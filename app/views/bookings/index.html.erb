@@ -1,29 +1,35 @@
-<div class="d-flex justify-content-between">
-  <h1 class="ml-4 mt-4">Toutes vos demandes de réservations:</h1>
+<div class= "booking_title">
+  <h1>Toutes vos demandes de réservations:</h1>
 </div><br>
 
 <div class="waiting_bookings">
   <h3>Demandes de réservation en attente de confirmation :</h3>
   <% @bookings.where(status: "pending").each do |booking| %>
     <div class="notification">
-      <img src='https://source.unsplash.com/HQ_USRr5AU4' class="avatar-large" />
-      <div class="notification-content d-flex justify-content-between align-items-center">
+      <!-- <img src='https://source.unsplash.com/HQ_USRr5AU4' class="avatar-large" /> -->
+      <% if booking.disguise.photo.attached? %>
+        <%= cl_image_tag booking.disguise.photo.key, height: 70, width: 70 %>
+      <% else %>
+        <img src="https://source.unsplash.com/HQ_USRr5AU4" class="avatar-large">
+      <% end %>
+      <div class="notification-content">
         <div class="notification-content-info">
-          <h4><small><%= booking.disguise.title %></small></h4>
+          <h5><small><%= booking.disguise.title %></small></h5>
           <p><%= booking.disguise.description %></p>
-          <p id="price_booking_notif"><%= booking.disguise.price_per_day %>€</p>
+          <h8><strong>Prix total:</strong> <span id="total-price" data-price_per_day='<%= booking.disguise.price_per_day%>'><%= booking.disguise.price_per_day * (((booking.end_date - booking.start_date)/3600)/24).round() %> </span>€</h8>
         </div>
         <div class="notification-content-dates">
-          <strong>Début : <%= booking.start_date.day %>/<%= booking.start_date.month %>/<%= booking.start_date.year %> <br></strong>
-          <strong>Fin : <%= booking.end_date.day %>/<%= booking.end_date.month %>/<%= booking.end_date.year %></strong>
+          <strong>Début :</strong> <%= booking.start_date.day %>/<%= booking.start_date.month %>/<%= booking.start_date.year %> <br>
+          <strong>Fin :</strong> <%= booking.end_date.day %>/<%= booking.end_date.month %>/<%= booking.end_date.year %> <br>
+          <strong>Durée :</strong> <%= (((booking.end_date - booking.start_date)/3600)/24).round() %> jours
         </div>
-        <div class="notification-content-status d-flex flex-column align-items-center">
-          <p>Statut:</p>
-          <span class="badge badge-warning">En attente</span>
-        <div class="notification-actions">
+        <div class="notification-content-status">
+          <strong>Statut:</strong>
+          <h5><span class="badge badge-warning">En attente</span></h5>
+        <!-- <div class="notification-actions">
           <%= link_to "Confirmer ?", accept_booking_path(booking), method: :patch %>
           <%= link_to "Refuser ?", refuse_booking_path(booking), method: :patch %>
-        </div>
+        </div> -->
         </div>
       </div>
     </div>
@@ -34,23 +40,28 @@
   <h3>Demandes de réservation passées :</h3>
   <% @bookings.where(status: [ "confirmed", "refused" ]).each do |booking| %>
     <div class="notification">
-      <img src='https://source.unsplash.com/HQ_USRr5AU4' class="avatar-large" />
-      <div class="notification-content d-flex justify-content-between align-items-center">
+      <% if booking.disguise.photo.attached? %>
+        <%= cl_image_tag booking.disguise.photo.key, height: 70, width: 70 %>
+      <% else %>
+        <img src="https://source.unsplash.com/HQ_USRr5AU4" class="avatar-large">
+      <% end %>
+      <div class="notification-content">
         <div class="notification-content-info">
-          <p><small><%= booking.disguise.title %></small></p>
+          <h5><small><%= booking.disguise.title %></small></h5>
           <p><%= booking.disguise.description %></p>
-          <p><%= booking.disguise.price_per_day %>€</p>
+          <h8><strong>Prix total:</strong> <span id="total-price" data-price_per_day='<%= booking.disguise.price_per_day%>'><%= booking.disguise.price_per_day * (((booking.end_date - booking.start_date)/3600)/24).round() %> </span>€</h8>
         </div>
         <div class="notification-content-dates">
-          <strong>Début de location : <%= booking.start_date.day %>/<%= booking.start_date.month %>/<%= booking.start_date.year %> <br></strong>
-          <strong>Fin de location : <%= booking.end_date.day %>/<%= booking.end_date.month %>/<%= booking.end_date.year %></strong>
+          <strong>Début :</strong> <%= booking.start_date.day %>/<%= booking.start_date.month %>/<%= booking.start_date.year %> <br>
+          <strong>Fin :</strong> <%= booking.end_date.day %>/<%= booking.end_date.month %>/<%= booking.end_date.year %> <br>
+          <strong>Durée :</strong> <%= (((booking.end_date - booking.start_date)/3600)/24).round() %> jours
         </div>
-        <div class="notification-content-status d-flex flex-column align-items-center">
+        <div class="notification-content-status">
           <p>Statut:</p>
             <% if booking.status == "refused" %>
-              <span class="badge badge-danger">Refusée</span>
+              <h5><span class="badge badge-danger">Refusée</span></h5>
             <% else %>
-              <span class="badge badge-success">Confirmée</span>
+              <h5><span class="badge badge-success">Confirmée</span></h5>
             <% end %>
         </div>
       </div>
