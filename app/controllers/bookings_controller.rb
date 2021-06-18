@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.disguise = @disguise
     @booking.status = "pending"
-    @booking.owner_id = @booking.disguise.user_id
+    # @booking.owner_id = @booking.disguise.user_id
     if @booking.save
       redirect_to bookings_path, notice: "La résa est faite"
     else
