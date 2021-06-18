@@ -18,7 +18,7 @@ class DisguisesController < ApplicationController
   def show
     @disguise = Disguise.find(params[:id])
     @booking = Booking.new
-    @markers = [{ lat: @disguise.latitude, lng: @disguise.longitude }]
+    @markers = [{ lat: @disguise.latitude, lng: @disguise.longitude, info_window: render_to_string(partial: "info_window", locals: { disguise: @disguise }), image_url: helpers.asset_url('doush.png') }]
   end
 
   def new
