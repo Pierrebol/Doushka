@@ -17,21 +17,21 @@
   position: relative;
 }
 
-.delete-disguise {
-  position:absolute;
-  top: 8px;
-  right: 16px;
-  color: white;
-}
-.edit-disguise {
-  position: absolute;
-  color: white;
-  right: 12px;
-  top: 32px;
-}
+// .delete-disguise {
+//   position:absolute;
+//   top: 8px;
+//   right: 16px;
+//   color: white;
+// }
+// .edit-disguise {
+//   position: absolute;
+//   color: white;
+//   right: 12px;
+//   top: 32px;
+// }
 
-.card-disguise > img {
-  height: 320px;
+.card-disguise.img {
+  height: 100%;
   width: 100%;
 }
 
@@ -49,7 +49,7 @@
 
 
 .card-disguise .card-disguise-infos {
-  padding: 16px;
+  padding: 12px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -99,4 +99,5 @@
 .link_disguise:hover {
   color: black;
 }
+
 
