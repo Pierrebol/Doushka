@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path, notice: "La résa est faite"
     else
-      render disguise_path(@disguise), notice: "pas valide"
+      redirect_to new_user_session_path
     end
   end
 

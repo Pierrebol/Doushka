@@ -8,58 +8,54 @@
 @import "form";
 @import "notification";
 @import "searchbar";
+@import "carousel";
 
 #index-typed-text {
 	font-family: 'Indie Flower', cursive;
 	font-size: 50px;
-	color: #FFCC29;
+	color: white;
 	font-weight: bold;
 }
 
 #dynamic_title {
 	font-family: 'Indie Flower', cursive;
 	font-size: 50px;
-	color: #FFCC29;
+	color: white;
 }
 
 .content {
 	display: flex;
 }
 
-
-#map {
-  height: 80vh;
-  position: sticky;
-  top: 0;
+.all-container {
+  padding: 0px;
+  margin: 0px;
+  background-color: #6e0230;
 }
 
-
-/*Smallest device*/
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards-disguise {
-    grid-template-columns: 1fr;
-  }
-  #map {
-    display: none;
-  }
+.cards-container{
+  background-color: white;
+  padding: 54px;
+  margin: 54px;
+  padding-top: 31px;
+  margin-top: 0;
+  padding-bottom: 31px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  box-shadow: 2px;
 }
 
-/*Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {
-  .cards-disguise {
-    grid-template-columns: 1fr 1fr;
-  }
-  #map {
-    display: none;
-  }
+#cleanbtn {
+  color: #f8f9fa;
+  border-color: #f8f9fa;
+  height: 65px;
+  margin-top: 12px;
+  margin-right: 54px;
+  margin-left: 30px;
 }
 
-/*Medium devices (tablets, 768px and up)*/
-@media (min-width: 1200px) {
-  .cards-disguise {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  #map {
-    display: block;
-  }
+#titlebtn {
+  margin-left:30px;
+  margin-right: 54px;
+  height:70px;
 }

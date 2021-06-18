@@ -1,9 +1,17 @@
 class DisguisesController < ApplicationController
   def index
-    if params[:my_disguises]
-      @disguises = Disguise.where(user: current_user)
+    if params[:search].present?
+      @disguises = Disguise.search_by_title_and_description(params[:search])
     else
       @disguises = Disguise.all
+    end
+  end
+
+  def user_index
+    if params[:search].present?
+      @disguises = Disguise.search_by_title_and_description(params[:search]).where(user: current_user)
+    else
+      @disguises = Disguise.where(user: current_user)
     end
   end
 
@@ -22,7 +30,7 @@ class DisguisesController < ApplicationController
     @disguise.user = current_user
 
     if @disguise.save
-      redirect_to disguise_path(@disguise)
+      redirect_to my_disguises_path
     else
       render :new
     end

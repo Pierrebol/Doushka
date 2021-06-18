@@ -17,6 +17,7 @@
 .notification p {
   margin: 0;
   line-height: 1.4;
+  font-size:12px;
 }
 
 .notification small {
@@ -49,4 +50,14 @@
 
 .past_bookings {
   margin: 20px 50px;
+}
+
+#price_booking_notif {
+  font-size: 20px;
+  font-weight:bold;
+  padding-top:5px;
+}
+
+.notification-content-info {
+  width: 300px;
 }

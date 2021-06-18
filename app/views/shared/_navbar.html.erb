@@ -12,13 +12,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
+        <li class="nav-item <%= active_class(root_path) %>">
           <%= link_to "Accueil", root_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Mes déguisements", disguises_path(my_disguises:"current_user"), class: "nav-link" %>
+        <li class="nav-item <%= active_class(my_disguises_path) %>">
+          <%= link_to "Mes déguisements", my_disguises_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
+        <li class="nav-item <%= active_class(bookings_path(my_bookings:"current_user")) %>">
           <%= link_to "Mes réservations", bookings_path(my_bookings:"current_user"), class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">

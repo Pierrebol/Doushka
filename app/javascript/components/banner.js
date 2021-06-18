@@ -5,7 +5,7 @@ const loadDynamicBannerText = () => {
   console.log(banner);
   if(banner) {
     new Typed('#banner-typed-text', {
-      strings: ["Soirée déguisée", "mariage", "enterrement", "diplôme", "tout évènement est bon pour se déguiser!"],
+      strings: ["Soirée déguisée", "mariage", "anniversaire", "diplôme", "tout évènement est bon pour se déguiser!"],
       typeSpeed: 40,
       loop: true
     });

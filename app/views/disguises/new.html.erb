@@ -1,13 +1,13 @@
 <div class="form-container">
-    <h2>Add a disguise</h2>
+    <h2>Ajouter un nouveau déguisement</h2>
     <%= simple_form_for (@disguise) do |f| %>
-    <%= f.input :title %>
+    <%= f.input :title, label: "Nom du déguisement" %>
     <%= f.input :description %>
-    <%= f.input :price_per_day %>
-    <%= f.input :category %>
-    <%= f.input :gender %>
-    <%= f.input :address %>
+    <%= f.input :price_per_day, label: "Coût de location par jour" %>
+    <%= f.input :category, label: "Thème", :collection => %w[Anges Animaux Années-20/30 Années-40/50 Années-60/70 Années-80/90 Antiquité Chevaliers Clowns Cirque Contes Dessins-animés  Diables Disco Elfe Lutin Fluo Gonflables Hawaï Hippies Jungle Luxe Magie Horreur Mondes-féeriques Mère-Noël Médiéval Supporters Ninja Prince Princesses Prisonniers Gangsters Préhistoire Père-Noël Religions Renaissance Rétro Peaux Sorciers Squelettes Fantômes Super-Héros Vampires Western Zombies Momies] %>
+    <%= f.input :gender, label: "Genre (femme/ homme/ enfant/ mixte)", :collection => %w[Femme Homme Enfant Mixte]%>
+    <%= f.input :address, label: "Adresse de récupération"%>
     <%= f.input :photo, as: :file %>
-    <%= f.submit "Create", class:"p 30 btn-warning" %>
+    <%= f.submit "Créer le déguisement", class:"p 30 btn-warning" %>
     <% end %>
 </div>
