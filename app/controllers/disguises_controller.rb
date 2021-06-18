@@ -50,7 +50,7 @@ class DisguisesController < ApplicationController
     @disguise = Disguise.find(params[:id])
     @disguise.destroy
 
-    redirect_to disguises_path
+    redirect_to my_disguises_path
   end
 
   private

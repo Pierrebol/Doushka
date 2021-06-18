@@ -1,4 +1,5 @@
 <div class="cards-container">
+
   <div class="search_bar">
     <form action="#">
       <input type="text"
@@ -11,27 +12,37 @@
       </button>
     </form>
   </div>
+
   <div class="cards-disguise">
     <% disguises.each do |disguise| %>
-      <%= link_to disguise_path(disguise), class: "link_disguise" do %>
-        <div class="card-disguise">
-          <% if params[:my_disguises].present? %>
-            <%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, disguise_path(disguise), method: :delete, data: { confirm: "Are you sure ?"}, class:"delete-disguise" %>
-            <%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_disguise_path(disguise), class:"edit-disguise" %>
-          <% end %>
-          <% if disguise.photo.attached? %>
-            <%= cl_image_tag disguise.photo.key, height: 600, width: 400, :gravity=>"faces", crop: :fill %>
-          <% else %>
-            <img src="https://source.unsplash.com/HQ_USRr5AU4" alt="">
-          <% end %>
-          <div class="card-disguise-infos">
-            <div class="card-name-and-description">
-              <h2><%= disguise.title %></h2>
-              <p><%= disguise.description%></p>
-            </div>
+      <div class="card-disguise">
+        <%= link_to disguise_path(disguise), class: "link_disguise" do %>
+          <div class="card-disguise-img">
+            <% if disguise.photo.attached? %>
+              <%= cl_image_tag disguise.photo.key, height: 320, width: 200, :gravity=>"faces", crop: :fill %>
+            <% else %>
+              <img src="https://source.unsplash.com/HQ_USRr5AU4" alt="">
+            <% end %>
+          </div>
+        <% end %>
+
+        <div class="card-disguise-infos">
+          <div class="title-desc">
+            <h2><%= disguise.title.capitalize %></h2>
+            <p><%= disguise.description%></p>
+          </div>
+          <div class="price">
             <h2 class="card-disguise-pricing"> <%= disguise.price_per_day%>€/ jour</h2>
           </div>
+          <div class="del-edit">
+            <% if params[:action] == "user_index" %>
+              <p><%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, disguise_path(disguise), method: :delete, data: { confirm: "Are you sure ?"}, class:"delete-disguise" %></p>
+              <p><%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_disguise_path(disguise), class:"edit-disguise" %></p>
+            <% end %>
+          </div>
         </div>
-      <% end %>
+
+      </div>
     <% end %>
   </div>
+</div>

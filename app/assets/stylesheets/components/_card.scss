@@ -17,23 +17,18 @@
   position: relative;
 }
 
-.delete-disguise {
-  position:absolute;
-  top: 8px;
-  right: 16px;
-  color: white;
-}
-.edit-disguise {
-  position: absolute;
-  color: white;
-  right: 12px;
-  top: 32px;
-}
-
-.card-disguise > img {
-  height: 320px;
-  width: 100%;
-}
+// .delete-disguise {
+//   position:absolute;
+//   top: 8px;
+//   right: 16px;
+//   color: white;
+// }
+// .edit-disguise {
+//   position: absolute;
+//   color: white;
+//   right: 12px;
+//   top: 32px;
+// }
 
 .card-disguise h2 {
   font-size: 16px;
@@ -47,12 +42,11 @@
   margin: 0;
 }
 
-
 .card-disguise .card-disguise-infos {
-  padding: 16px;
+  padding: 12px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .cards-landing {
@@ -64,7 +58,6 @@
     margin-top:30px;
     font-size: 16px;
     font-weight: bold;
-
 }
 
 .card-landing {
@@ -99,4 +92,13 @@
 .link_disguise:hover {
   color: black;
 }
+
+.card-disguise-img img {
+  width: 100%;
+}
+
+.card-disguise-infos .title-desc {
+  margin-right: 5px;
+}
+
 
