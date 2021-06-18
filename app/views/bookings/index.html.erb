@@ -4,7 +4,7 @@
 
 <div class="waiting_bookings">
   <h3>Demandes de réservation en attente de confirmation :</h3>
-  <% @bookings.where(status: "pending").each do |booking| %>
+  <% @my_bookings.where(status: "pending").each do |booking| %>
     <div class="notification">
       <!-- <img src='https://source.unsplash.com/HQ_USRr5AU4' class="avatar-large" /> -->
       <% if booking.disguise.photo.attached? %>
@@ -38,7 +38,7 @@
 
 <div class="past_bookings">
   <h3>Demandes de réservation passées :</h3>
-  <% @bookings.where(status: [ "confirmed", "refused" ]).each do |booking| %>
+  <% @my_bookings.where(status: [ "confirmed", "refused" ]).each do |booking| %>
     <div class="notification">
       <% if booking.disguise.photo.attached? %>
         <%= cl_image_tag booking.disguise.photo.key, height: 70, width: 70 %>

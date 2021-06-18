@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.where(user: current_user)
+    @bookings = Booking.all
+    @my_bookings = Booking.where(user: current_user)
   end
 
   def create
@@ -9,6 +10,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.disguise = @disguise
     @booking.status = "pending"
+    @booking.owner_id = @booking.disguise.user_id
     if @booking.save
       redirect_to bookings_path, notice: "La résa est faite"
     else
@@ -24,16 +26,18 @@ class BookingsController < ApplicationController
 
   def accept
     @booking = Booking.find(params[:id])
+    @disguise = @booking.disguise
     @booking.status = "confirmed"
     @booking.save
-    redirect_to bookings_path, notice: "Réservation acceptée !"
+    redirect_to disguise_path(@disguise)
   end
 
   def refuse
     @booking = Booking.find(params[:id])
+    @disguise = @booking.disguise
     @booking.status = "refused"
     @booking.save
-    redirect_to bookings_path, notice: "Réservation refusée !"
+    redirect_to disguise_path(@disguise)
   end
 
   private

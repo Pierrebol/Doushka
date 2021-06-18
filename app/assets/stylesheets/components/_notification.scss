@@ -4,11 +4,22 @@
   background: white;
   padding: 8px 16px;
   border: 1px solid rgb(235,235,235);
-  margin:15px;
   width: 800px;
   margin: 20px auto;
   height: 130px;
 }
+
+.notification-disguise {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+  width: 450px;
+  margin: 20px auto;
+  height: 130px;
+}
+
 
 .notification .notification-content {
   flex-grow: 1;
@@ -94,4 +105,24 @@
 
 h3 {
   margin-bottom: 30px;
+}
+
+.bookings_my_disguise {
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  padding: 16px 24px;
+  width: 400px;
+}
+
+.notification-disguise {
+  width:100%;
+}
+
+.notification-content-disguise {
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button_confirmation {
+  color: green;
 }

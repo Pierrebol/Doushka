@@ -18,6 +18,7 @@ class DisguisesController < ApplicationController
   def show
     @disguise = Disguise.find(params[:id])
     @booking = Booking.new
+    @my_disguises_booked = Booking.where(owner_id: current_user.id)
     @markers = [{ lat: @disguise.latitude, lng: @disguise.longitude }]
   end
 
