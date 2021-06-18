@@ -9,6 +9,7 @@ const displayBookingConfirm = () => {
       swal({
         title: "Vos dates de réservation 👇",
         text: `${dates.value}
+
         Prix total : ${price.innerText}€`,
         icon: "warning",
         closeOnClickOutside: false,
