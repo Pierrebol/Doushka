@@ -1,16 +1,19 @@
-.carousel {
+.colour-orange {
     text-align: center;
-    background-color: rgba(248, 234, 38, 0.1);
-}
-.carousel-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: rgba(226,201,181,0.3);
+    padding: 10px 1px 50px 0px;
 }
 
-.carousel-item {
-  margin: 0 auto;
+.review  {
+    text-align: center;
+    margin: 0 auto;
 }
+
+.text-center {
+    text-align: center !important;
+}
+
+
 
 h2 {
     font-weight: bold;
@@ -20,4 +23,6 @@ h2 {
 }
 .card-body-carousel {
     box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    padding: 10px;
+    background-color: linen;
 }
