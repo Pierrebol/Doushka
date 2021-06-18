@@ -18,7 +18,9 @@ class DisguisesController < ApplicationController
   def show
     @disguise = Disguise.find(params[:id])
     @booking = Booking.new
-    @my_disguises_booked = Booking.where(owner_id: current_user.id)
+    if user_signed_in?
+      @my_disguises_booked = Booking.where(owner_id: current_user.id)
+    end
     @markers = [{ lat: @disguise.latitude, lng: @disguise.longitude, info_window: render_to_string(partial: "info_window", locals: { disguise: @disguise }), image_url: helpers.asset_url('doush.png') }]
   end
 
